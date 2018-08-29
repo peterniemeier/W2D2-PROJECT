@@ -1,0 +1,15 @@
+load 'display.rb'
+a = Board.new
+b = Display.new(a)
+b.render
+b.cursor.selected
+b.cursor.toggle_selected
+
+
+while true
+  b.render
+  puts 'quit?'
+  input = gets.chomp
+  break if input == 'quit'
+  b.cursor.get_input
+end
